@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: frontend-app:latest
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+
+  backend:
+    image: backend-app:latest
+    build: ./backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
+
+# DEPRECATED, not invalid property anymore
+# depends_on:
+#   backend:
+#     - mongo

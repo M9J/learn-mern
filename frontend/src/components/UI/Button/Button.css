@@ -1,0 +1,11 @@
+.button-normal {
+  color: initial;
+}
+
+.button-success {
+  color: green;
+}
+
+.button-error {
+  color: red;
+}
